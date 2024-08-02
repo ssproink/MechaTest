@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="icon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="0.46677678"
+     inkscape:cx="-87.836417"
+     inkscape:cy="18.209989"
+     inkscape:window-width="1680"
+     inkscape:window-height="979"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:lockguides="false">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="0.13249999"
+       originy="0.093691014"
+       spacingx="0.99999998"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#stripes-grid"
+       preserveAspectRatio="xMidYMid"
+       id="pattern28"
+       patternTransform="matrix(9.3412751,9.3412751,-9.3412751,9.3412751,-1121.2795,-593.33105)"
+       x="0"
+       y="0"
+       width="3.6" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="3"
+       height="10"
+       patternTransform="scale(2)"
+       preserveAspectRatio="xMidYMid"
+       id="stripes-grid"
+       style="fill:#000000"
+       x="0"
+       y="0"
+       inkscape:label="Stripes grid"
+       inkscape:collect="always"
+       inkscape:isstock="true">
+      <rect
+         style="stroke:none"
+         x="0"
+         y="0"
+         width="2"
+         height="10"
+         id="rect134-4" />
+    </pattern>
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.13249999,0.09369101)">
+    <path
+       style="fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:3.49529"
+       d="M 1.6178995,133.24961 V 1.1440441 L 67.670677,67.196809 133.72347,1.1440441 V 133.24961 H 107.30235 V 67.196809 L 67.670677,106.82848 28.039015,67.196809 v 66.052801 z"
+       id="path28" />
+    <path
+       style="fill:url(#pattern28);fill-opacity:1;stroke:#000000;stroke-width:3.5008;stroke-linejoin:bevel;stroke-dasharray:none"
+       d="M 1.6178989,133.2496 V 1.1440283 L 67.670682,67.196793 133.72349,1.1440283 V 133.2496 H 107.30236 V 67.196793 L 67.670682,106.82846 28.039021,67.196793 V 133.2496 Z"
+       id="path25" />
+  </g>
+</svg>

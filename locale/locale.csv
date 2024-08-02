@@ -1,0 +1,35 @@
+keys,en_US,ru_RU
+
+BUTTON_RESUME_GAME,Resume game,Продолжить игру
+BUTTON_LOAD_GAME,Load game,Загрузить игру
+BUTTON_NEW_GAME,New game,Новая игра
+BUTTON_SETTINGS,Settings,Настройки
+BUTTON_EXIT,Exit,Выход
+
+SETTINGS,Settings,Настройки
+
+SETTINGS_DEFAULT,Default settings,Исходные настройки
+OK,OK,OK
+CANCEL,Cancel,Отмена
+ERROR,Error,Ошибка
+SETTINGS_ERROR,Settings file seems to be broken. Default settings have been set. Please restart the game.,"Похоже, что файл настроек повреждён. Были заданы настройки по умолчанию. Пожалуйста, перезапустите игру."
+
+SETTINGS_LANGUAGE,Language,Язык
+SETTINGS_VOLUME,Volume,Громкость
+SETTINGS_KEY_MOVE_FORWARD,Move forward,Двигаться вперёд
+SETTINGS_KEY_MOVE_BACKWARD,Move backward,Двигаться назад
+SETTINGS_KEY_MOVE_LEFT,Move left,Двигаться влево
+SETTINGS_KEY_MOVE_RIGHT,Move right,Двигаться вправо
+SETTINGS_KEY_JUMP,Jump,Прыжок
+SETTINGS_KEY_FLY,Fly,Полёт
+SETTINGS_KEY_GUN1,Down-left gun,Нижняя левая пушка
+SETTINGS_KEY_GUN2,Down-right gun,Нижняя правая пушка
+SETTINGS_KEY_GUN3,Up-left gun,Верхняя левая пушка
+SETTINGS_KEY_GUN4,Up-right gun,Верхняя правая пушка
+SETTINGS_KEY_RELOAD,Reload,Перезарядить
+SETTINGS_KEY_USE,Use,Использовать
+
+LOAD_GAME,Load game,Загрузить игру
+SAVE_GAME,Save game,Сохранить игру
+BUTTON_SAVE_GAME,Save game,Сохранить игру
+BUTTON_REMOVE_SAVE,Remove save,Удалить сохранение

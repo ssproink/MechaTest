@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdyduonn4luhs"]
+
+[ext_resource type="Script" path="res://ui/menu.gd" id="1_se2cc"]
+[ext_resource type="PackedScene" uid="uid://hplcx37uxr4b" path="res://ui/settings_window.tscn" id="2_pcx06"]
+[ext_resource type="PackedScene" uid="uid://bqrof5f6lajdq" path="res://ui/saves_window.tscn" id="3_om1vg"]
+
+[node name="Menu" type="Node"]
+script = ExtResource("1_se2cc")
+
+[node name="Overlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="Overlay"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ResumeGame" type="Button" parent="Overlay/MainMenuButtons"]
+visible = false
+layout_mode = 2
+text = "BUTTON_RESUME_GAME"
+
+[node name="LoadGame" type="Button" parent="Overlay/MainMenuButtons"]
+layout_mode = 2
+text = "BUTTON_LOAD_GAME"
+
+[node name="NewGame" type="Button" parent="Overlay/MainMenuButtons"]
+layout_mode = 2
+text = "BUTTON_NEW_GAME"
+
+[node name="Settings" type="Button" parent="Overlay/MainMenuButtons"]
+layout_mode = 2
+text = "BUTTON_SETTINGS"
+
+[node name="Exit" type="Button" parent="Overlay/MainMenuButtons"]
+layout_mode = 2
+text = "BUTTON_EXIT"
+
+[node name="Settings" parent="Overlay" instance=ExtResource("2_pcx06")]
+visible = false
+layout_mode = 1
+
+[node name="LoadSaveWindow" parent="Overlay" instance=ExtResource("3_om1vg")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Overlay/MainMenuButtons/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="Overlay/MainMenuButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Overlay/MainMenuButtons/Exit" to="." method="_on_exit_pressed"]

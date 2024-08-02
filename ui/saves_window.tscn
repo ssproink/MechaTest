@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqrof5f6lajdq"]
+
+[ext_resource type="Script" path="res://ui/saves_window.gd" id="1_1okuw"]
+
+[node name="LoadSaveWindow" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1okuw")
+
+[node name="Caption" type="Label" parent="."]
+layout_mode = 2
+text = "LOAD_GAME"
+horizontal_alignment = 1
+
+[node name="Saves" type="ItemList" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="LoadSaveGameButton" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "BUTTON_LOAD_GAME"
+
+[node name="RemoveSaveButton" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "BUTTON_REMOVE_SAVE"
+
+[node name="CancelButton" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "CANCEL"
+
+[connection signal="pressed" from="Buttons/CancelButton" to="." method="_on_cancel_button_pressed"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://70r68geammpf"]
+
+[ext_resource type="Script" path="res://default/settings_generator.gd" id="1_732e0"]
+
+[node name="SettingsGenerator" type="Node"]
+script = ExtResource("1_732e0")

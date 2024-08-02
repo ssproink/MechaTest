@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwc5lxl8h5wj7"]
+
+[ext_resource type="Script" path="res://ui/key_button.gd" id="1_11dci"]
+
+[node name="KeyButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+auto_translate = false
+localize_numeral_system = false
+focus_mode = 0
+text = "None"
+script = ExtResource("1_11dci")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

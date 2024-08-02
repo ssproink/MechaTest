@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://btq4hc6175hb8"]
+
+[ext_resource type="Script" path="res://ui/volume_control.gd" id="1_3tu1j"]
+
+[node name="VolumeControl" type="HBoxContainer"]
+offset_right = 95.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+script = ExtResource("1_3tu1j")
+
+[node name="Slider" type="HSlider" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+tick_count = 11
+
+[node name="SpinBox" type="SpinBox" parent="."]
+layout_mode = 2
+
+[connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]
+[connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]

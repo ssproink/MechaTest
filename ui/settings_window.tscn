@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://hplcx37uxr4b"]
+
+[ext_resource type="Script" path="res://ui/settings_window.gd" id="1_nt7bk"]
+[ext_resource type="PackedScene" uid="uid://btq4hc6175hb8" path="res://ui/volume_control.tscn" id="2_n24d3"]
+
+[node name="SettingsWindow" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nt7bk")
+
+[node name="Caption" type="Label" parent="."]
+layout_mode = 2
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="SettingsList" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="LocaleLabel" type="Label" parent="SettingsList"]
+layout_mode = 2
+text = "SETTINGS_LANGUAGE"
+
+[node name="Locale" type="OptionButton" parent="SettingsList"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VolumeLabel" type="Label" parent="SettingsList"]
+layout_mode = 2
+text = "SETTINGS_VOLUME"
+
+[node name="Volume" parent="SettingsList" instance=ExtResource("2_n24d3")]
+layout_mode = 2
+
+[node name="ChangeSettingsHBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="OKButton" type="Button" parent="ChangeSettingsHBox"]
+layout_mode = 2
+text = "OK"
+
+[node name="CancelButton" type="Button" parent="ChangeSettingsHBox"]
+layout_mode = 2
+text = "CANCEL"
+
+[node name="DefaultSettingsButton" type="Button" parent="ChangeSettingsHBox"]
+layout_mode = 2
+text = "SETTINGS_DEFAULT"
+
+[connection signal="item_selected" from="SettingsList/Locale" to="." method="_on_language_item_selected"]
+[connection signal="pressed" from="ChangeSettingsHBox/OKButton" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="ChangeSettingsHBox/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="ChangeSettingsHBox/DefaultSettingsButton" to="." method="_on_default_settings_button_pressed"]
