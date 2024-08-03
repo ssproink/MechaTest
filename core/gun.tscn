@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://desfk0k4q43k3"]
+
+[ext_resource type="Script" path="res://core/gun.gd" id="1_hs47g"]
+
+[node name="Gun" type="Node3D"]
+script = ExtResource("1_hs47g")
+
+[node name="Reload" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Reload" to="." method="_on_reload_timeout"]

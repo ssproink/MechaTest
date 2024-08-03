@@ -1,5 +1,8 @@
 extends Node
 
+func _init():
+	randomize()
+
 func _ready():
 	var err = Settings.load()
 	if err != OK:
