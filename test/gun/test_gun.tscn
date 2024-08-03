@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://chbhgp6iirpsy"]
+
+[ext_resource type="Script" path="res://test/gun/test_gun.gd" id="1_ak7r0"]
+[ext_resource type="PackedScene" uid="uid://desfk0k4q43k3" path="res://core/gun.tscn" id="1_tnqj1"]
+
+[node name="TestGun" instance=ExtResource("1_tnqj1")]
+script = ExtResource("1_ak7r0")
+mag_capacity = 1000
+bullets_in_mag = 1000
+bullets = 10000
+fire_rate = 6000
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+size = Vector3(0.5, 0.5, 1)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+radius = 0.25

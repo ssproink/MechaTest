@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://c57ilblltsn2t"]
+
+[ext_resource type="Script" path="res://test/gun/test_shooting_range.gd" id="1_yftyy"]
+[ext_resource type="PackedScene" uid="uid://bsemfumi2cs1x" path="res://test/gun/test_gun_user.tscn" id="2_p42b4"]
+[ext_resource type="PackedScene" uid="uid://chbhgp6iirpsy" path="res://test/gun/test_gun.tscn" id="3_r7jcj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mscid"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64nbk"]
+size = Vector3(10, 0.1, 50)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mit04"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rklwu"]
+size = Vector3(8, 8, 0.1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m8ju1"]
+
+[sub_resource type="Sky" id="Sky_3pm2e"]
+sky_material = SubResource("ProceduralSkyMaterial_m8ju1")
+
+[sub_resource type="Environment" id="Environment_bpn6g"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_3pm2e")
+
+[node name="TestShootingRange" type="Node3D"]
+script = ExtResource("1_yftyy")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(10, 0.1, 50)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
+physics_material_override = SubResource("PhysicsMaterial_mscid")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_64nbk")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 23)
+size = Vector3(8, 8, 0.1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D2"]
+collision_layer = 5
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_mit04")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_rklwu")
+
+[node name="TestGunUser" parent="." instance=ExtResource("2_p42b4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -23)
+
+[node name="TestGun" parent="TestGunUser" node_paths=PackedStringArray("gun_user") instance=ExtResource("3_r7jcj")]
+gun_user = NodePath("..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 3, 2)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bpn6g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Params" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FPS" type="Label" parent="CanvasLayer/Params"]
+layout_mode = 2
+
+[node name="Magazine" type="Label" parent="CanvasLayer/Params"]
+layout_mode = 2
+text = "Mag: %d/%d"
+
+[node name="GunStatus" type="Label" parent="CanvasLayer/Params"]
+layout_mode = 2
+text = "%s"
+
+[node name="BulletPool" type="Label" parent="CanvasLayer/Params"]
+layout_mode = 2
+text = "bullet_pool: %d"

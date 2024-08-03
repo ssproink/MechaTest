@@ -4,3 +4,4 @@
 *.import
 addons/godot-git-plugin/
 dist/
+.vscode/

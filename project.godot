@@ -20,6 +20,10 @@ config/icon="res://icon.png"
 
 CommonSettings="*res://common_settings.gd"
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -94,6 +98,6 @@ locale/translations=PackedStringArray("res://locale/locale.ru_RU.translation", "
 
 [layer_names]
 
-3d_physics/layer_1="player"
-3d_physics/layer_2="enemy"
-3d_physics/layer_3="world"
+3d_physics/layer_1="world"
+3d_physics/layer_2="player"
+3d_physics/layer_3="enemy"
