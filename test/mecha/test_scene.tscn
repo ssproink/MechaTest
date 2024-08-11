@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://bp4icvdqn157p"]
+
+[ext_resource type="PackedScene" uid="uid://bnm60iferpbxy" path="res://test/mecha/test_mecha.tscn" id="1_ikbai"]
+[ext_resource type="PackedScene" uid="uid://bkb73fh0emoyc" path="res://game/mecha1/mecha1.glb" id="2_w8tfs"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ltn7f"]
+size = Vector2(16, 16)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4pxcy"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6jnkt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e2ogf"]
+
+[sub_resource type="Sky" id="Sky_xndys"]
+sky_material = SubResource("ProceduralSkyMaterial_e2ogf")
+
+[sub_resource type="Environment" id="Environment_mvmar"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_xndys")
+
+[node name="TestScene" type="Node3D"]
+
+[node name="Floor" type="CSGMesh3D" parent="."]
+mesh = SubResource("PlaneMesh_ltn7f")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+physics_material_override = SubResource("PhysicsMaterial_4pxcy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_6jnkt")
+
+[node name="TestMecha" parent="." instance=ExtResource("1_ikbai")]
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mvmar")
+
+[node name="mecha1" parent="WorldEnvironment" instance=ExtResource("2_w8tfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="WorldEnvironment/mecha1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.5, -0.5)
+current = true

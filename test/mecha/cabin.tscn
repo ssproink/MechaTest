@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://eei1tw700nal"]
+
+[ext_resource type="PackedScene" uid="uid://chbhgp6iirpsy" path="res://test/gun/test_gun.tscn" id="1_5l4x1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68jrs"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.392157)
+metallic = 0.8
+roughness = 0.2
+
+[node name="Cabin" type="Node3D"]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+radius = 1.0
+radial_segments = 24
+rings = 12
+material = SubResource("StandardMaterial3D_68jrs")
+
+[node name="LeftGun" parent="." instance=ExtResource("1_5l4x1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, 1)
+
+[node name="RightGun" parent="." instance=ExtResource("1_5l4x1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.5, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

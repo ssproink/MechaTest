@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b7ldrt63tkreu"]
+
+[node name="Legs" type="Node3D"]
+
+[node name="Root" type="CSGBox3D" parent="."]
+size = Vector3(1, 0.5, 1)
+
+[node name="LeftLeg" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
+size = Vector3(1, 2, 1)
+
+[node name="RightLeg" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 0)
+size = Vector3(1, 2, 1)

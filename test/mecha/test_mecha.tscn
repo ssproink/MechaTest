@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnm60iferpbxy"]
+
+[ext_resource type="Script" path="res://test/mecha/test_mecha.gd" id="1_kjmtg"]
+[ext_resource type="PackedScene" uid="uid://b7ldrt63tkreu" path="res://test/mecha/legs.tscn" id="1_vt7r6"]
+[ext_resource type="PackedScene" uid="uid://eei1tw700nal" path="res://test/mecha/cabin.tscn" id="2_c3frd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6hrd"]
+radius = 1.0
+height = 4.0
+
+[node name="TestMecha" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_kjmtg")
+
+[node name="Legs" parent="." instance=ExtResource("1_vt7r6")]
+
+[node name="Cabin" parent="." instance=ExtResource("2_c3frd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_k6hrd")
