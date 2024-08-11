@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkj1k75w2tus"]
+
+[ext_resource type="Texture2D" uid="uid://bnuuxc0o0guqj" path="res://game/world/sky.svg" id="1_xm6j4"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4isqs"]
+panorama = ExtResource("1_xm6j4")
+
+[sub_resource type="Sky" id="Sky_h6x0x"]
+sky_material = SubResource("PanoramaSkyMaterial_4isqs")
+
+[sub_resource type="Environment" id="Environment_6hgt2"]
+background_mode = 2
+sky = SubResource("Sky_h6x0x")
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6hgt2")

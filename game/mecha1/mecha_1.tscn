@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://jwhfdl24kwwj"]
+
+[ext_resource type="PackedScene" uid="uid://bkb73fh0emoyc" path="res://game/mecha1/mecha1.glb" id="1_ynlvj"]
+
+[node name="mecha1" instance=ExtResource("1_ynlvj")]
+
+[node name="Skeleton3D" parent="Mecha" index="0"]
+bones/1/rotation = Quaternion(0.952409, -0.212898, -0.212898, -0.0475907)
+bones/2/rotation = Quaternion(-0.0475907, 0.212899, -0.212898, 0.952409)
+bones/5/rotation = Quaternion(0.95241, 0.212899, 0.212898, -0.0475906)
+bones/10/rotation = Quaternion(0.952409, -0.212899, -0.212899, -0.0475907)
+bones/11/rotation = Quaternion(-0.0475907, 0.212899, -0.212899, 0.952409)
+bones/12/rotation = Quaternion(0.952409, 0.212899, 0.212899, -0.0475907)
+bones/13/rotation = Quaternion(-0.0475907, -0.212899, 0.212899, 0.952409)

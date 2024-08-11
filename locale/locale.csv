@@ -1,5 +1,8 @@
 keys,en_US,ru_RU
 
+GAME_TITLE,メカテスト,メカテスト
+GAME_TITLE_2,MechaTest,MechaTest
+
 BUTTON_RESUME_GAME,Resume game,Продолжить игру
 BUTTON_LOAD_GAME,Load game,Загрузить игру
 BUTTON_NEW_GAME,New game,Новая игра

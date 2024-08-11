@@ -1,13 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdyduonn4luhs"]
+[gd_scene load_steps=9 format=3 uid="uid://cdyduonn4luhs"]
 
 [ext_resource type="Script" path="res://ui/menu.gd" id="1_se2cc"]
 [ext_resource type="PackedScene" uid="uid://hplcx37uxr4b" path="res://ui/settings_window.tscn" id="2_pcx06"]
 [ext_resource type="PackedScene" uid="uid://bqrof5f6lajdq" path="res://ui/saves_window.tscn" id="3_om1vg"]
+[ext_resource type="Texture2D" uid="uid://bnuuxc0o0guqj" path="res://game/world/sky.svg" id="4_30sad"]
+[ext_resource type="PackedScene" uid="uid://bm4qlw14etsqu" path="res://game/player/player.tscn" id="5_5gufx"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uyqmb"]
+panorama = ExtResource("4_30sad")
+
+[sub_resource type="Sky" id="Sky_dlu4s"]
+sky_material = SubResource("PanoramaSkyMaterial_uyqmb")
+
+[sub_resource type="Environment" id="Environment_rx723"]
+background_mode = 2
+sky = SubResource("Sky_dlu4s")
+glow_blend_mode = 0
 
 [node name="Menu" type="Node"]
 script = ExtResource("1_se2cc")
 
-[node name="Overlay" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Overlay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,47 +30,83 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainMenuButtons" type="VBoxContainer" parent="Overlay"]
+[node name="MainMenuButtons" type="VBoxContainer" parent="CanvasLayer/Overlay"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
-grow_horizontal = 0
+offset_left = -88.5
+offset_top = -136.0
+offset_right = 88.5
+grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ResumeGame" type="Button" parent="Overlay/MainMenuButtons"]
+[node name="ResumeGame" type="Button" parent="CanvasLayer/Overlay/MainMenuButtons"]
 visible = false
 layout_mode = 2
 text = "BUTTON_RESUME_GAME"
 
-[node name="LoadGame" type="Button" parent="Overlay/MainMenuButtons"]
+[node name="LoadGame" type="Button" parent="CanvasLayer/Overlay/MainMenuButtons"]
 layout_mode = 2
 text = "BUTTON_LOAD_GAME"
 
-[node name="NewGame" type="Button" parent="Overlay/MainMenuButtons"]
+[node name="NewGame" type="Button" parent="CanvasLayer/Overlay/MainMenuButtons"]
 layout_mode = 2
 text = "BUTTON_NEW_GAME"
 
-[node name="Settings" type="Button" parent="Overlay/MainMenuButtons"]
+[node name="Settings" type="Button" parent="CanvasLayer/Overlay/MainMenuButtons"]
 layout_mode = 2
 text = "BUTTON_SETTINGS"
 
-[node name="Exit" type="Button" parent="Overlay/MainMenuButtons"]
+[node name="Exit" type="Button" parent="CanvasLayer/Overlay/MainMenuButtons"]
 layout_mode = 2
 text = "BUTTON_EXIT"
 
-[node name="Settings" parent="Overlay" instance=ExtResource("2_pcx06")]
+[node name="Settings" parent="CanvasLayer/Overlay" instance=ExtResource("2_pcx06")]
 visible = false
 layout_mode = 1
 
-[node name="LoadSaveWindow" parent="Overlay" instance=ExtResource("3_om1vg")]
+[node name="LoadSaveWindow" parent="CanvasLayer/Overlay" instance=ExtResource("3_om1vg")]
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="Overlay/MainMenuButtons/LoadGame" to="." method="_on_load_game_pressed"]
-[connection signal="pressed" from="Overlay/MainMenuButtons/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Overlay/MainMenuButtons/Exit" to="." method="_on_exit_pressed"]
+[node name="TitleVBox" type="VBoxContainer" parent="CanvasLayer/Overlay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="CanvasLayer/Overlay/TitleVBox"]
+layout_mode = 2
+text = "GAME_TITLE"
+horizontal_alignment = 1
+
+[node name="Title2" type="Label" parent="CanvasLayer/Overlay/TitleVBox"]
+layout_mode = 2
+text = "GAME_TITLE_2"
+horizontal_alignment = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rx723")
+
+[node name="Player" parent="." instance=ExtResource("5_5gufx")]
+process_mode = 4
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -1, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 3, 3, -5)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, 0.353553, -0.612372, 10, 9, -10)
+
+[connection signal="pressed" from="CanvasLayer/Overlay/MainMenuButtons/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Overlay/MainMenuButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Overlay/MainMenuButtons/Exit" to="." method="_on_exit_pressed"]

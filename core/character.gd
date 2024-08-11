@@ -27,7 +27,7 @@ func gravity(delta) -> Vector3:
 
 func _physics_process(delta):
 	velocity = gravity(delta)
-	move_and_slide()
+	#move_and_slide()
 
 func _process(delta):
 	if alive and not is_equal_approx(hp, hp_max):

@@ -9,9 +9,9 @@ enum State { FIRED, IDLE }
 @export var state : State = State.IDLE
 
 @export_category("Bullet parameters")
-@export_range(0.0, 1e6, 0.1, "suffix:m/s") var speed : float = 1.0 # m/s
-@export_range(0, 1e6, 1, "suffix:gr") var mass : int = 100 # gr
-@export_range(0, 1e6, 0.1, "suffix:m") var max_distance : float = 100.0 # m
+@export_range(0.0, 1e6, 0.1, "suffix:m/s") var speed : float = 1.0
+@export_range(0, 1e6, 1, "suffix:gr") var mass : int = 100
+@export_range(0, 1e6, 0.1, "suffix:m") var max_distance : float = 100.0
 
 var first_position : Vector3
 var first_iter : bool = true

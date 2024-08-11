@@ -10,11 +10,11 @@ func _ready():
 		get_tree().quit()
 
 func _on_load_game_pressed():
-	$Overlay/LoadSaveWindow.set_load_mode()
-	$Overlay/LoadSaveWindow.visible = true
+	$CanvasLayer/Overlay/LoadSaveWindow.set_load_mode()
+	$CanvasLayer/Overlay/LoadSaveWindow.visible = true
 
 func _on_settings_pressed():
-	$Overlay/Settings.open()
+	$CanvasLayer/Overlay/Settings.open()
 
 func _on_exit_pressed():
 	get_tree().quit()
